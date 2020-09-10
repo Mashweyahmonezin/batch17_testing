@@ -18,6 +18,11 @@ Route::get('/', function () {
     //return 'Hello Laravel';
 });
 
+Route::get('admin', function () {
+    return view('backendtemplate');
+    //return 'Hello Laravel';
+});
+
 Route::get('/testing',function ($value=''){
 	return 'This is a testing page!';
-})
+});
