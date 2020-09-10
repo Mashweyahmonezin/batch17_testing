@@ -20,4 +20,7 @@ Route::get('/', function () {
 
 Route::get('/testing',function ($value=''){
 	return 'This is a testing page!';
-})
+});
+
+Route::resource('students','StudentController');
+
