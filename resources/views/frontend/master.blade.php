@@ -41,11 +41,11 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="{{route('eventpage')}}">Event</a></li>
                 <li><a href="{{route('singerpage')}}">Singer</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contacts</a></li>
-                <li class="cta"><a href="buy-tickets.html">Buy Tickets</a></li>
+                <li><a href="{{route('schedulepage')}}">Schedule</a></li>
+                <li><a href="{{route('venuepage')}}">Venue</a></li>
+                <li class="cta"><a href="{{route('buyticketpage')}}">Buy Tickets</a></li>
               </ul>
             </nav>
           </div>
