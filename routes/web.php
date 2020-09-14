@@ -13,33 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'PageController@main')->name('mainpage') ;
+// {
 	
-    return view('welcome');
-    //return 'Hello Laravel';
-});
+//     return view('welcome');
+//     //return 'Hello Laravel';
+// });
 
-
-
-Route::get('/testing',function($value=''){
-	return 'This is a testing page!';
-
-});
-
-
-
-Route::get('admin', function () {
-    return view('backendtemplate');
-    //return 'Hello Laravel';
-});
-
-Route::get('/testing',function ($value=''){
-	return 'This is a testing page!';
-});
-
-
-
-Route::resource('students','StudentController');
-
+Route::get('main','PageController@backfun')->name('backendpage');
+Route::get('front','PageController@frontfun')->name('frontpage');
+Route::get('singer','PageController@singerfun')->name('singerpage');
 
 
