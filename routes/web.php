@@ -20,10 +20,19 @@ Route::get('/', 'PageController@main')->name('mainpage') ;
 //     //return 'Hello Laravel';
 // });
 
-Route::get('main','PageController@backfun')->name('backendpage');
+Route::middleware('auth')->group(function(){
+
+	Route::get('main','PageController@backfun')->name('backendpage');
+	Route::resource('venues','VenueController');
+	Route::resource('tickets','TicketController');
+	Route::resource('events','EventController');
+
+});
+
+
 Route::get('front','PageController@frontfun')->name('frontpage');
-Route::get('singer','PageController@singerfun')->name('singerpage');
-Route::get('schedule','PageController@schedulefun')->name('schedulepage');
+// Route::get('singer','PageController@singerfun')->name('singerpage');
+// Route::get('schedule','PageController@schedulefun')->name('schedulepage');
 Route::get('event','PageController@eventfun')->name('eventpage');
 Route::get('venue','PageController@venuefun')->name('venuepage');
 Route::get('buyticket','PageController@buyticket')->name('buyticketpage');
@@ -33,3 +42,7 @@ Route::get('buyticket','PageController@buyticket')->name('buyticketpage');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

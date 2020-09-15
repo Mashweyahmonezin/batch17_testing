@@ -42,8 +42,8 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="{{route('eventpage')}}">Event</a></li>
-                <li><a href="{{route('singerpage')}}">Singer</a></li>
-                <li><a href="{{route('schedulepage')}}">Schedule</a></li>
+                {{-- <li><a href="{{route('singerpage')}}">Singer</a></li>
+                <li><a href="{{route('schedulepage')}}">Schedule</a></li> --}}
                 <li><a href="{{route('venuepage')}}">Venue</a></li>
                 <li class="cta"><a href="{{route('buyticketpage')}}">Buy Tickets</a></li>
               </ul>

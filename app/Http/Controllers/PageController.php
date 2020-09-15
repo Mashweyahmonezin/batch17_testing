@@ -17,14 +17,14 @@ class PageController extends Controller
     {
     	return view('frontend.main');   
     }
-    public function singerfun($value='')
-    {
-    	return view('frontend.singer');
-    }
-    public function schedulefun($value='')
-    {
-    	return view('frontend.schedule');
-    }
+    // public function singerfun($value='')
+    // {
+    // 	return view('frontend.singer');
+    // }
+    // public function schedulefun($value='')
+    // {
+    // 	return view('frontend.schedule');
+    // }
     public function eventfun($value='')
     {
     	return view('frontend.event');
