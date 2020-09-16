@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Venue;
+use DB;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -27,8 +28,9 @@ class EventController extends Controller
      */
     public function create()
     {
-      $venues=Venue::all();
-             return view('backend.event.create',compact('venues'));
+        $venues=Venue::all();
+       
+        return view('backend.event.create',compact('venues'));
     }
 
     /**
@@ -53,9 +55,18 @@ class EventController extends Controller
         $event->start_time=$request->start_time;
         $event->end_time=$request->end_time;
         $event->venues_id=$request->venue;
-        
+
+        // $date = DB::table('events')->get('Date');
+        // $start_time = DB::table('events')->get('start_time');
+        // $end_time = DB::table('events')->get('end_time');
+        // $count = $date->count();
+        // var_dump($start_time);
+        // die();
+    
+       
         $event->save();
         return redirect()->route('events.index');
+              
     }
 
     /**

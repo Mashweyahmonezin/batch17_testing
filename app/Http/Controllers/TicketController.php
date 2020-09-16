@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ticket;
+use App\Event;
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
@@ -16,7 +17,8 @@ class TicketController extends Controller
     {
         //$venues=Venue::all();
         $tickets=Ticket::all();
-        return view('backend.ticket.index',compact('tickets'));
+        $events = Event::all();
+        return view('backend.ticket.index',compact('tickets','events'));
     }
 
     /**
@@ -26,7 +28,8 @@ class TicketController extends Controller
      */
     public function create()
     {
-        return view('backend.ticket.create');
+        $events = Event::all();
+        return view('backend.ticket.create',compact('events'));
     }
 
     /**
@@ -39,11 +42,15 @@ class TicketController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            
+            'price' => 'required',          
+    
         ]);
+
         $ticket=new Ticket();
         $ticket->name=$request->name;
-        
+        $ticket->price = $request->price;
+        $ticket->event_id = $request->event;
+
         $ticket->save();
         return redirect()->route('tickets.index');
     }
@@ -82,9 +89,11 @@ class TicketController extends Controller
          $request->validate([
             'name'=>'required',
             
+            
         ]);
         
         $ticket->name=$request->name;
+        
         
         $ticket->save();
         return redirect()->route('tickets.index');

@@ -15,7 +15,8 @@
     			<thead class="thead-dark">
     				<tr>
     					<th>No</th>
-    					<th>Name</th>
+                        <th>Name</th>
+    					<th>Price</th>
                        <th>Actions</th>
     				</tr>
     			</thead>
@@ -25,6 +26,7 @@
     				<tr>
                         <td>{{$i++}}</td>    
                         <td>{{$ticket->name}}</td>            
+                        <td>{{$ticket->price}}</td>            
                         
                         <td>
                             

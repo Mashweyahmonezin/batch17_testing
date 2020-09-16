@@ -13,4 +13,7 @@ class Event extends Model
     {
     	return $this->belongsTo('App\Venue');
     }
+     public function tickets(){
+    	return $this->hasMany('App\Ticket');
+    }
 }

@@ -26,6 +26,14 @@
 			        </div>
 			      </div>
 
+			     {{--  <div class="form-group row {{ $errors->has('price') ? 'has-error' : '' }}">
+			        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+			        <div class="col-sm-5">
+			          <input type="integer" class="form-control" id="inputName" name="price" value="{{$ticket->price}}">
+			          <span class="text-danger">{{ $errors->first('price') }}</span>
+			        </div>
+			      </div>
+ --}}
 			     
 
 			     
