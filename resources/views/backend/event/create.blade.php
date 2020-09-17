@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
       	<div class="col-md-12">
-      		<form action="{{route('events.store')}}" method="post">
+      		<form action="{{route('events.store')}}" method="post" enctype="multipart/form-data">
 			      @csrf
 			      
 			       
@@ -67,7 +67,7 @@
 			      <div class="row form-group {{ $errors->has('photo') ? 'has-error' : '' }}">
 				<label class="col-md-1 form-control-label">Photo</label>
 				<div class="col-md-6">
-					<input type="file" name="photo"  class="form-control" value="{{-- {{$event->photo}} --}}">
+					<input type="file" name="photo"  class="form-control" value="">
 					<img src="{{-- {{asset($event->photo)}} --}}" class="img-fluid">
 					<input type="hidden" name="oldphoto" value="{{-- {{asset($event->photo)}} --}}">
 				</div>

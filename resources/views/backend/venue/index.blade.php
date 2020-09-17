@@ -28,7 +28,7 @@
                         <td>{{$i++}}</td>    
                         <td>{{$venue->name}}</td>            
                         <td>{{$venue->address}}</td>
-                        <td>{{$venue->photo}}</td>
+                        <td> <img src="{{asset($venue->photo)}}" width="300px" height="300px"> </td>  
                         <td>
                             
                             <a href="{{route('venues.edit',$venue->id)}}" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>

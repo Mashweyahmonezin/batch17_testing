@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Venue;
 
 class PageController extends Controller
 {
@@ -31,7 +32,8 @@ class PageController extends Controller
     }
     public function venuefun($value='')
     {
-    	return view('frontend.venue');
+        $venues=Venue::all();
+    	return view('frontend.venue',compact('venues'));
     }
     public function buyticket($value='')
     {

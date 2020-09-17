@@ -33,7 +33,7 @@
                         <td>{{$event->Date}}</td>            
                         <td>{{$event->start_time}}</td>            
                         <td>{{$event->end_time}}</td>            
-                        <td>{{$event->photo}}</td>            
+                        <td><img src="{{asset($event->photo)}}" width="300px" height="300px"> </td>            
                         <td>{{$event->id}}</td>            
                                   
                         

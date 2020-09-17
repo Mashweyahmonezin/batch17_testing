@@ -29,7 +29,7 @@
               </figure>
               <blockquote>
                 <p class="author mb-0">Emely Peters</p>
-                <p class="text-muted mb-4">Coordinator</p>
+                
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
                 
               </blockquote>
@@ -43,7 +43,7 @@
               </figure>
               <blockquote>
                 <p class="author mb-0">Alex Anchors</p>
-                <p class="text-muted mb-4">Coordinator</p>
+                
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
                 
               </blockquote>
@@ -57,7 +57,7 @@
               </figure>
               <blockquote>
                 <p class="author mb-0">Aaron Thomas</p>
-                <p class="text-muted mb-4">Coordinator</p>
+                
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
                 
               </blockquote>
@@ -71,7 +71,7 @@
               </figure>
               <blockquote>
                 <p class="author mb-0">Emely Peters</p>
-                <p class="text-muted mb-4">Coordinator</p>
+                
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
                 
               </blockquote>
@@ -85,7 +85,7 @@
               </figure>
               <blockquote>
                 <p class="author mb-0">Alex Anchors</p>
-                <p class="text-muted mb-4">Coordinator</p>
+                
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
                 
               </blockquote>
@@ -99,7 +99,7 @@
               </figure>
               <blockquote>
                 <p class="author mb-0">Aaron Thomas</p>
-                <p class="text-muted mb-4">Coordinator</p>
+                
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
                 
               </blockquote>
