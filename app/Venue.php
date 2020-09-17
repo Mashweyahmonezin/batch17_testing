@@ -9,8 +9,8 @@ class Venue extends Model
     protected $fillable = [
         'name','address','photo'
     ];
-    public function event()
+    public function events()
     {
-    	return $this->hasOne('App\Event');
+    	return $this->hasMany('App\Event');
     }
 }

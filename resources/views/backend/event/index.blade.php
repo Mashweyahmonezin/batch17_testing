@@ -20,7 +20,7 @@
                         <th>Start_time</th>
                         <th>End_time</th>
                         <th>Photo</th>
-    					<th>Venue_id</th>
+    					<th>Venue_Name</th>
                        <th>Actions</th>
     				</tr>
     			</thead>
@@ -34,7 +34,7 @@
                         <td>{{$event->start_time}}</td>            
                         <td>{{$event->end_time}}</td>            
                         <td><img src="{{asset($event->photo)}}" width="300px" height="300px"> </td>            
-                        <td>{{$event->id}}</td>            
+                        <td>{{$event->venue->name}}</td>            
                                   
                         
                         <td>

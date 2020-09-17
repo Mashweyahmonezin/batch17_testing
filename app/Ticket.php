@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
      protected $fillable = [
-        'name','price'
+        'name','price','event_id',
     ];
     public function venue()
     {
-    	return $this->belonsTo('App\Ticket');
+    	return $this->belongsTo('App\Ticket');
     }
 
-     public function events(){
+     public function event(){
     	return $this->belongsTo('App\Event');
     }
 }
