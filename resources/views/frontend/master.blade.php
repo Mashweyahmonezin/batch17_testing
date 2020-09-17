@@ -35,7 +35,7 @@
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-11 col-xl-2">
-            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">Work<span class="text-primary">shop</span> </a></h1>
+            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">Join<span class="text-primary">With Us</span> </a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -62,7 +62,7 @@
 
     @yield('content')
       
-    <footer class="site-footer">
+    {{-- <footer class="site-footer">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4">
@@ -87,7 +87,7 @@
               <a href="#" class="p-2"><span class="icon-instagram"></span></a>
             </p>
           </div>
-        </div>
+        </div> --}}
         <div class="row">
           
             <div class="col-md-12 text-center">

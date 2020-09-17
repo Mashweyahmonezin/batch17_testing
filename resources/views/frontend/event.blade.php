@@ -21,91 +21,26 @@
         </div>
 
         <div class="row">
-
+          @foreach($events as $event)
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="100">
             <div class="testimony text-center"> 
               <figure>
-                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                <img src="{{asset($event->photo)}}" alt="Image" class="img-fluid">
               </figure>
               <blockquote>
-                <p class="author mb-0">Emely Peters</p>
+                 <p class="author mb-0">{{$event->name}}</p>
                 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
+                <p>{{$event->name}}</p>
+                <p>{{$event->date}}</p>
+                <p>{{$event->start_time}}</p>
+                <p>{{$event->end_time}}</p>
                 
               </blockquote>
             </div>
           </div>
+          @endforeach
 
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="200">
-            <div class="testimony text-center">
-              <figure>
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <blockquote>
-                <p class="author mb-0">Alex Anchors</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
-                
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="300">
-            <div class="testimony text-center">
-              <figure>
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <blockquote>
-                <p class="author mb-0">Aaron Thomas</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
-                
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="400">
-            <div class="testimony text-center">
-              <figure>
-                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <blockquote>
-                <p class="author mb-0">Emely Peters</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
-                
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="500">
-            <div class="testimony text-center">
-              <figure>
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <blockquote>
-                <p class="author mb-0">Alex Anchors</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
-                
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="600">
-            <div class="testimony text-center">
-              <figure>
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <blockquote>
-                <p class="author mb-0">Aaron Thomas</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
-                
-              </blockquote>
-            </div>
-          </div>
-        </div>
+         
 
 
 
