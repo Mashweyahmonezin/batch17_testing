@@ -25,12 +25,12 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="100">
             <div class="testimony text-center"> 
               <figure>
-                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                <img src="{{asset('frontend/images/2.jpg')}}" alt="Image" class="img-fluid">
               </figure>
               <blockquote>
-                <p class="author mb-0">Emely Peters</p>
+               <p class="author mb-0">Jason Ross:The Atlas</p>
                 <p class="text-muted mb-4">Coordinator</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
+                <p>Monday,September 14,2020-8:00 PM </p>
                 
               </blockquote>
             </div>
@@ -39,12 +39,12 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="200">
             <div class="testimony text-center">
               <figure>
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                <img src="{{asset('frontend/images/3.jpg')}}" alt="Image" class="img-fluid">
               </figure>
               <blockquote>
-                <p class="author mb-0">Alex Anchors</p>
+                 <p class="author mb-0">JST JR:Group Chat</p>
                 <p class="text-muted mb-4">Coordinator</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
+                <p>Thursday,November 15,2020-9:00 PM </p>
                 
               </blockquote>
             </div>
@@ -53,12 +53,12 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="300">
             <div class="testimony text-center">
               <figure>
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                <img src="{{asset('frontend/images/4.jpg')}}" alt="Image" class="img-fluid">
               </figure>
               <blockquote>
-                <p class="author mb-0">Aaron Thomas</p>
+                <p class="author mb-0">Craze:Live From Miami</p>
                 <p class="text-muted mb-4">Coordinator</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
+                <p>Wednesday,September 16,2020-6:00 PM </p>
                 
               </blockquote>
             </div>
@@ -67,12 +67,12 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="400">
             <div class="testimony text-center">
               <figure>
-                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                <img src="{{asset('frontend/images/5.jpg')}}" alt="Image" class="img-fluid">
               </figure>
               <blockquote>
-                <p class="author mb-0">Emely Peters</p>
+                <p class="author mb-0">Tritonal:Enhanced Sessions</p>
                 <p class="text-muted mb-4">Coordinator</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
+                <p>Thursday,September 17,2020-5:00 PM</p>
                 
               </blockquote>
             </div>
@@ -81,12 +81,12 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="500">
             <div class="testimony text-center">
               <figure>
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                <img src="{{asset('frontend/images/8.jpg')}}" alt="Image" class="img-fluid">
               </figure>
               <blockquote>
-                <p class="author mb-0">Alex Anchors</p>
+                <p class="author mb-0">Four Tet(Live)</p>
                 <p class="text-muted mb-4">Coordinator</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
+                <p>Tuesday,October 27,2020-7:00 PM</p>
                 
               </blockquote>
             </div>
@@ -95,12 +95,12 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="600">
             <div class="testimony text-center">
               <figure>
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                <img src="{{asset('frontend/images/9.jpeg')}}" alt="Image" class="img-fluid">
               </figure>
               <blockquote>
-                <p class="author mb-0">Aaron Thomas</p>
+                <p class="author mb-0">SLANDER</p>
                 <p class="text-muted mb-4">Coordinator</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem alias reprehenderit error quidem aliquam ad minus, veritatis modi.&</p>
+                <p>Friday,October 30,2020-8:00 PM</p>
                 
               </blockquote>
             </div>
