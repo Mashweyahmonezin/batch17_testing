@@ -40,10 +40,12 @@ class VenueController extends Controller
         $request->validate([
             'name'=>'required',
             'address'=>'required',
+            'photo'=>'required',
         ]);
         $venue=new Venue();
         $venue->name=$request->name;
         $venue->address=$request->address;
+        $venue->photo=$request->photo;
         $venue->save();
         return redirect()->route('venues.index');
     }
@@ -82,10 +84,12 @@ class VenueController extends Controller
         $request->validate([
             'name'=>'required',
             'address'=>'required',
+            'photo'=>'required',
         ]);
         
         $venue->name=$request->name;
         $venue->address=$request->address;
+        $venue->photo=$request->photo;
         $venue->save();
         return redirect()->route('venues.index');
     }

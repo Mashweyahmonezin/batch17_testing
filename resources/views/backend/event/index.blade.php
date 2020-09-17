@@ -19,6 +19,7 @@
                         <th>Date</th>
                         <th>Start_time</th>
                         <th>End_time</th>
+                        <th>Photo</th>
     					<th>Venue_id</th>
                        <th>Actions</th>
     				</tr>
@@ -32,6 +33,7 @@
                         <td>{{$event->Date}}</td>            
                         <td>{{$event->start_time}}</td>            
                         <td>{{$event->end_time}}</td>            
+                        <td>{{$event->photo}}</td>            
                         <td>{{$event->id}}</td>            
                                   
                         

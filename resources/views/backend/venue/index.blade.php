@@ -17,6 +17,7 @@
     					<th>No</th>
     					<th>Name</th>
                        <th>Address</th>
+                       <th>Photo</th>
     					<th>Actions</th>
     				</tr>
     			</thead>
@@ -27,6 +28,7 @@
                         <td>{{$i++}}</td>    
                         <td>{{$venue->name}}</td>            
                         <td>{{$venue->address}}</td>
+                        <td>{{$venue->photo}}</td>
                         <td>
                             
                             <a href="{{route('venues.edit',$venue->id)}}" class="btn btn-outline-warning"><i class="fas fa-edit"></i></a>

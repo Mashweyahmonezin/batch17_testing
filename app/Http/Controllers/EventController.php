@@ -46,6 +46,7 @@ class EventController extends Controller
             'date'=>'required',
             'start_time'=>'required',
             'end_time'=>'required',
+            'photo'=>'required',
             'venue'=>'required',
             
         ]);
@@ -54,6 +55,7 @@ class EventController extends Controller
         $event->date=$request->date;
         $event->start_time=$request->start_time;
         $event->end_time=$request->end_time;
+        $event->photo=$request->photo;
         $event->venues_id=$request->venue;
 
         // $date = DB::table('events')->get('Date');
@@ -107,6 +109,7 @@ class EventController extends Controller
             'date'=>'required',
             'start_time'=>'required',
             'end_time'=>'required',
+            'photo'=>'required',
             'venue'=>'required',
             
         ]);
@@ -115,6 +118,7 @@ class EventController extends Controller
         $event->date=$request->date;
         $event->start_time=$request->start_time;
         $event->end_time=$request->end_time;
+        $event->photo=$request->photo;
         $event->venues_id=$request->venue;
         
         $event->save();

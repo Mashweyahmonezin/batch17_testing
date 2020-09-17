@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->timestamps();
             $table->time('start_time');
             $table->time('end_time');
+            $table->text('photo');
 
              $table->foreign('venues_id')
                     ->references('id')

@@ -64,6 +64,15 @@
 			        </div>
 			      </div>
 
+			      <div class="row form-group {{ $errors->has('photo') ? 'has-error' : '' }}">
+				<label class="col-md-1 form-control-label">Photo</label>
+				<div class="col-md-6">
+					<input type="file" name="photo"  class="form-control" value="{{-- {{$event->photo}} --}}">
+					<img src="{{-- {{asset($event->photo)}} --}}" class="img-fluid">
+					<input type="hidden" name="oldphoto" value="{{-- {{asset($event->photo)}} --}}">
+				</div>
+				</div>
+
 
 					
 
