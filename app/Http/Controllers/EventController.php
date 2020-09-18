@@ -46,6 +46,7 @@ class EventController extends Controller
             'date'=>'required',
             'start_time'=>'required',
             'end_time'=>'required',
+            'photo'=>'required',
             'venue'=>'required',
             
         ]);
@@ -54,7 +55,18 @@ class EventController extends Controller
         $event->date=$request->date;
         $event->start_time=$request->start_time;
         $event->end_time=$request->end_time;
+       
         $event->venues_id=$request->venue;
+
+        $imageName = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('backend/event'),$imageName);
+            $path = 'backend/event/'.$imageName;
+
+              //Data insert
+            
+            
+            $event->photo = $path;
+            $event->save();
 
         // $date = DB::table('events')->get('Date');
         // $start_time = DB::table('events')->get('start_time');
@@ -107,7 +119,9 @@ class EventController extends Controller
             'date'=>'required',
             'start_time'=>'required',
             'end_time'=>'required',
-            'venue'=>'required',
+            'photo'=>'sometimes',
+            
+            'venue'=>'required'
             
         ]);
         //$event=new Event();
@@ -115,7 +129,29 @@ class EventController extends Controller
         $event->date=$request->date;
         $event->start_time=$request->start_time;
         $event->end_time=$request->end_time;
+        
         $event->venues_id=$request->venue;
+
+         if ($request->hasFile('photo')) {
+
+             $imageName = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('backend/event'),$imageName);
+            $path = 'backend/event/'.$imageName;
+
+
+            
+         }else{
+
+            $path = $request->oldphoto;
+         }
+
+        //data update
+     
+            
+            $event->photo = $path;
+          
+            
+
         
         $event->save();
         return redirect()->route('events.index');    }

@@ -40,10 +40,23 @@ class VenueController extends Controller
         $request->validate([
             'name'=>'required',
             'address'=>'required',
+            'photo'=>'required',
         ]);
         $venue=new Venue();
         $venue->name=$request->name;
         $venue->address=$request->address;
+        
+
+         $imageName = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('backend/venue'),$imageName);
+            $path = 'backend/venue/'.$imageName;
+
+              //Data insert
+            
+            
+            $venue->photo = $path;
+            $venue->save();
+
         $venue->save();
         return redirect()->route('venues.index');
     }
@@ -82,10 +95,32 @@ class VenueController extends Controller
         $request->validate([
             'name'=>'required',
             'address'=>'required',
+            'photo'=>'required',
         ]);
         
         $venue->name=$request->name;
         $venue->address=$request->address;
+       
+        if ($request->hasFile('photo')) {
+
+             $imageName = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('backend/venue'),$imageName);
+            $path = 'backend/venue/'.$imageName;
+
+
+            
+         }else{
+
+            $path = $request->oldphoto;
+         }
+
+        //data update
+     
+            $venue->photo = $path;
+          
+            
+
+
         $venue->save();
         return redirect()->route('venues.index');
     }

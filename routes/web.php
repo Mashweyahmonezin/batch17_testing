@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@main')->name('mainpage') ;
+//Route::get('/', 'PageController@main')->name('mainpage') ;
 // {
 	
 //     return view('welcome');
@@ -34,7 +34,7 @@ Route::get('front','PageController@frontfun')->name('frontpage');
 // Route::get('singer','PageController@singerfun')->name('singerpage');
 // Route::get('schedule','PageController@schedulefun')->name('schedulepage');
 Route::get('event','PageController@eventfun')->name('eventpage');
-Route::get('venue','PageController@venuefun')->name('venuepage');
+Route::get('/','PageController@venuefun')->name('venuepage');
 Route::get('buyticket','PageController@buyticket')->name('buyticketpage');
 
 

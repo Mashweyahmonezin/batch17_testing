@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
       	<div class="col-md-12">
-      		<form action="{{route('venues.store')}}" method="post">
+      		<form action="{{route('venues.store')}}" method="post" enctype="multipart/form-data">
 			      @csrf
 			      
 			       
@@ -32,6 +32,15 @@
 			          <span class="text-danger">{{ $errors->first('address') }}</span>
 			        </div>
 			      </div>
+
+			      <div class="row form-group {{ $errors->has('photo') ? 'has-error' : '' }}">
+				<label class="col-md-1 form-control-label">Photo</label>
+				<div class="col-md-6">
+					<input type="file" name="photo"  class="form-control" value="">
+					<img src="{{-- {{asset($venue->photo)}} --}}" class="img-fluid">
+					
+				</div>
+				</div>
 
 			     
 			      <div class="form-group row">

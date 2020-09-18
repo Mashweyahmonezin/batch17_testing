@@ -18,6 +18,7 @@ class CreateVenuesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('address');
+            $table->text('photo');
 
 
         });

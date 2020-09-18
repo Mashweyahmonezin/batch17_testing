@@ -17,6 +17,7 @@
     					<th>No</th>
                         <th>Name</th>
     					<th>Price</th>
+                        <th>Event Name</th>
                        <th>Actions</th>
     				</tr>
     			</thead>
@@ -25,8 +26,9 @@
                     @foreach($tickets as $ticket)
     				<tr>
                         <td>{{$i++}}</td>    
-                        <td>{{$ticket->name}}</td>            
-                        <td>{{$ticket->price}}</td>            
+                        <td>{{$ticket->name}}</td>  
+                        <td>{{$ticket->price}}</td>          
+                        <td>{{$ticket->event->name}}</td>            
                         
                         <td>
                             

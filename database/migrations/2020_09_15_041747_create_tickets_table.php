@@ -18,6 +18,7 @@ class CreateTicketsTable extends Migration
             $table->string('name');
             
             $table->integer('price');
+            $table->unsignedBigInteger('event_id');
 
             $table->timestamps();
 
