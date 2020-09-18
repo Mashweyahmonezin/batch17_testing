@@ -20,25 +20,44 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="container mt-5 px-5">
+    <!-- Category -->
+    <div class="row">
+
           @foreach($events as $event)
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimony text-center"> 
-              <figure>
-                <img src="{{asset($event->photo)}}" alt="Image" class="img-fluid">
-              </figure>
-              <blockquote>
-                 <p class="author mb-0">{{$event->name}}</p>
+      
+     {{--  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+        <div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center"> --}}
+           <a href="{{route('buyticket',$event->id)}}"> 
+            <img src="{{asset($event->photo)}}"  width="300px" height="200px">
+             
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+            <blockquote>
+                <p class="author mb-0 text-danger">Name:{{$event->name}}</p>
                 
-                <p>{{$event->name}}</p>
-                <p>{{$event->date}}</p>
-                <p>{{$event->start_time}}</p>
-                <p>{{$event->end_time}}</p>
+                <p class="text-danger">Address:{{$event->address}}</p>
+                <p class="text-danger">Date:{{$event->Date}}</p>
+                <p class="text-danger">Venue:{{$event->venue->name}}</p>
+                <p class="text-danger">Duration:{{$event->start_time}} &nbsp; {{$event->end_time}}</p>
                 
               </blockquote>
             </div>
-          </div>
-          @endforeach
+        
+            </a>
+            </div>    
+     {{--</div> --}}
+      @endforeach
+  
+  
+
+          
+        
+
+      </div>
+    </div>
+
+
+       
 
          
 
@@ -49,42 +68,7 @@
       </div>
     </div>
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-lg-4 ">
-            <div class="site-section-heading" data-aos="fade-up">
-              <h2>Sponsors</h2>
-            </div>
-          </div>
-          <div class="col-lg-6 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="100">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error deleniti dolores necessitatibus eligendi. Nesciunt repellendus ab voluptatibus.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-            <img src="images/logo_1.png" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
-            <img src="images/logo_2.png" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="400">
-            <img src="images/logo_3.png" alt="Image" class="img-fluid">
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="500">
-            <img src="images/logo_4.png" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="600">
-            <img src="images/logo_5.png" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="700">
-            <img src="images/logo_6.png" alt="Image" class="img-fluid">
-          </div>
-
-        </div>
-      </div>
-    </div>
+    
 
 
 @endsection

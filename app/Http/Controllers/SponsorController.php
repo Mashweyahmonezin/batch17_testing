@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Venue;
+use App\Sponsor;
 use Illuminate\Http\Request;
 
-class VenueController extends Controller
+class SponsorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,9 @@ class VenueController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-
     {
-        $venues=Venue::all();
-        return view('backend.venue.index',compact('venues'));
+        $sponsors=Sponsor::all();
+        return view('backend.sponsor.index',compact('sponsors'));
     }
 
     /**
@@ -26,7 +25,7 @@ class VenueController extends Controller
      */
     public function create()
     {
-        return view('backend.venue.create');
+        return view('backend.sponsor.create');
     }
 
     /**
@@ -38,36 +37,34 @@ class VenueController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required|min:4',
-            'address'=>'required',
-            'photo'=>'required',
+            
+            'photo'=>'required|min:4',
         ]);
-        $venue=new Venue();
-        $venue->name=$request->name;
-        $venue->address=$request->address;
+        $sponsor=new Sponsor();
+        
         
 
          $imageName = time().'.'.$request->photo->extension();
-            $request->photo->move(public_path('backend/venue'),$imageName);
-            $path = 'backend/venue/'.$imageName;
+            $request->photo->move(public_path('backend/sponsor'),$imageName);
+            $path = 'backend/sponsor/'.$imageName;
 
               //Data insert
             
             
-            $venue->photo = $path;
-            $venue->save();
+            $sponsor->photo = $path;
+            $sponsor->save();
 
         
-        return redirect()->route('venues.index');
+        return redirect()->route('sponsors.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Venue  $venue
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Venue $venue)
+    public function show($id)
     {
         //
     }
@@ -75,37 +72,35 @@ class VenueController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Venue  $venue
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Venue $venue)
+    public function edit($id)
     {
-        return view('backend.venue.edit',compact('venue'));
+        return view('backend.sponsor.edit',compact('sponsor'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Venue  $venue
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Venue $venue)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required',
-            'address'=>'required',
+            
             'photo'=>'required',
         ]);
         
-        $venue->name=$request->name;
-        $venue->address=$request->address;
+        
        
         if ($request->hasFile('photo')) {
 
              $imageName = time().'.'.$request->photo->extension();
-            $request->photo->move(public_path('backend/venue'),$imageName);
-            $path = 'backend/venue/'.$imageName;
+            $request->photo->move(public_path('backend/sponsor'),$imageName);
+            $path = 'backend/sponsor/'.$imageName;
 
 
             
@@ -116,24 +111,24 @@ class VenueController extends Controller
 
         //data update
      
-            $venue->photo = $path;
+            $sponsor->photo = $path;
           
             
 
 
-        $venue->save();
-        return redirect()->route('venues.index');
+        $sponsor->save();
+        return redirect()->route('sponsors.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Venue  $venue
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Venue $venue)
+    public function destroy($id)
     {
-        $venue->delete();
-        return redirect()->route('venues.index');
+         $sponsor->delete();
+        return redirect()->route('sponsors.index');
     }
 }

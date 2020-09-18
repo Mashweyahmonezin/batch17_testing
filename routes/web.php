@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function(){
 	Route::resource('venues','VenueController');
 	Route::resource('tickets','TicketController');
 	Route::resource('events','EventController');
+	Route::resource('sponsors','SponsorController');
 
 });
 
@@ -33,9 +34,9 @@ Route::middleware('auth')->group(function(){
 Route::get('front','PageController@frontfun')->name('frontpage');
 // Route::get('singer','PageController@singerfun')->name('singerpage');
 // Route::get('schedule','PageController@schedulefun')->name('schedulepage');
-Route::get('event','PageController@eventfun')->name('eventpage');
+Route::get('event/{id}','PageController@eventfun')->name('event');
 Route::get('/','PageController@venuefun')->name('venuepage');
-Route::get('buyticket','PageController@buyticket')->name('buyticketpage');
+Route::get('buyticket/{id}','PageController@buyticket')->name('buyticket');
 
 
 
