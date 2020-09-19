@@ -1,78 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Login V16</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="{{ asset('frontend/logintemplate/images/icons/favicon.ico')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/vendor/bootstrap/css/bootstrap.min.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/vendor/animate/animate.css')}}">
-	
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/vendor/css-hamburgers/hamburgers.min.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/vendor/animsition/css/animsition.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/vendor/select2/select2.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/vendor/daterangepicker/daterangepicker.css')}}">
-
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/logintemplate/css/main.css')}}">
-
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url({{asset('../images/bg-01.jpg')}});">
-			<div class="wrap-login100 p-t-30 p-b-50">
-				<span class="login100-form-title p-b-41">
-					Account Login
-				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5">
-
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="User name">
-						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
-					</div>
-
-					<div class="container-login100-form-btn m-t-32">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
-
-				</form>
-			</div>
-		</div>
+@extends('frontend.master')
+@section('content')
+<div class="jumbotron jumbotron-fluid subtitle" style="background-color: #37474F">
+  		<div class="container">
+    		<h1 class="text-center text-white"> Login </h1>
+  		</div>
 	</div>
 	
+	<!-- Content -->
+	<div class="container my-5">
 
-	<div id="dropDownSelect1"></div>
-	
+		<div class="row justify-content-center">
+			<div class="col-5">
+				<form action="{{route('login')}}" method="POST">
+					@csrf
+		      		<div class="form-group">
+		      			<label class="small mb-1" for="inputEmailAddress">Email</label>
+		      			<input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" name="email" />
+		      		</div>
+		      		
+		      		<div class="form-group">
+		      			<label class="small mb-1" for="inputPassword">Password</label>
+		      			<input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" />
+		      		</div>
+		      
+		      		<div class="form-group">
+		          		<div class="custom-control custom-checkbox">
+		          			<input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
+		          			<label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
+		          		</div>
 
-	<script src="{{ asset('frontend/logintemplate/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+		          		<a class="small" href="#">Forgot Password?</a>
 
-	<script src="{{ asset('frontend/logintemplate/vendor/animsition/js/animsition.min.js')}}"></script>
+		      		</div>
+		      		
+		      		<div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+		        		
+		        		<button type="submit" class="btn btn-secondary mainfullbtncolor btn-block">Login</button>
+		      		</div>
 
-	<script src="{{ asset('frontend/logintemplate/vendor/bootstrap/js/popper.js')}}"></script>
-	<script src="{{ asset('frontend/logintemplate/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 
-	<script src="{{ asset('frontend/logintemplate/vendor/select2/select2.min.js')}}"></script>
+		  		</form>
 
-	<script src="{{ asset('frontend/logintemplate/vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{ asset('frontend/logintemplate/vendor/daterangepicker/daterangepicker.js')}}"></script>
+		  		<div class=" mt-3 text-center ">
+		  			<a href="#" class="loginLink text-decoration-none">Need an account? Sign Up!</a>
+		  		</div>
+			</div>
+		</div>
+		
+		
+		
 
-	<script src="{{ asset('frontend/logintemplate/vendor/countdowntime/countdowntime.js')}}"></script>
-	<script src="{{ asset('frontend/logintemplate/js/main.js')}}"></script>
-
-</body>
-</html>
+	</div>
+@endsection

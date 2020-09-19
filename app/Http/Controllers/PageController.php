@@ -44,11 +44,16 @@ class PageController extends Controller
         $tickets=Ticket::where('event_id',$id)->get();
     	return view('frontend.buyticket',compact('tickets'));
     }
-    public function loginfun($value=''){
+    public function loginfun($value='')
+    {
         return view('frontend.login');
     }
     public function ticketfun($value='')
     {
        return view('frontend.ticketlist');
+    }
+    public function registerfun($value='')
+    {
+        return view('frontend.register');
     }
 }

@@ -24,9 +24,18 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0"  data-aos="fade-up" data-aos-delay="200">
             <div class="pricing border-secondary text-center">
               <h2>{{$ticket->name}}</h2>
+              <h2>{{$ticket->event->name}}</h2>
               <div class="amount"><span class="number">{{$ticket->price}}</span><sup>Ks</sup> </div>
              
-              <div><a href="#" class="btn btn-secondary px-4 py-2"  data-id="{{$ticket->id}}" data-name="{{$ticket->name}}" data-price="{{$ticket->price}}">Buy Ticket</a></div>
+              <div>
+              @role('User')
+
+                <a href="#" class="btn btn-secondary px-4 py-2"  data-id="{{$ticket->id}}" data-name="{{$ticket->name}}" data-price="{{$ticket->price}}" data-event="{{$ticket->event}}">Buy Ticket</a>
+              @else
+                <a href="{{route('loginform')}}" class="btn btn-secondary btn-block mainfullbtncolor">Please login </a>
+              @endrole
+
+              </div>
             </div>
           </div>
 

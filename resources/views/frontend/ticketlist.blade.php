@@ -12,6 +12,7 @@
      				<tr>
      					<th></th>
      					<th>Name</th>
+                              <th>Event_Name</th>
      					<th></th>
      					<th>Qty</th>
      					<th></th>
@@ -23,6 +24,11 @@
      				
      			</tbody>
      		</table>
+               @role('User')
+               <a href="#" class="btn btn-info float-left buy_now" type="submit">
+                    CheckOut
+               </a>
+               @endrole
      	</div>
      </div>
      </div>

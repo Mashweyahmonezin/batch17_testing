@@ -40,12 +40,13 @@ Route::get('buyticket/{id}','PageController@buyticket')->name('buyticket');
 
 
 
+Route::get('loginform','PageController@loginfun')->name('loginform');
+Route::get('registerform','PageController@registerfun')->name('registerform');
 
 
 
 
 Auth::routes();
 
-Route::get('loginform','PageController@loginfun')->name('loginpageee');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('ticketlist','PageController@ticketfun');
