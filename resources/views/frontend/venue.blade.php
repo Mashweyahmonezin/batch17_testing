@@ -20,12 +20,16 @@
           </div>
         </div>
 
-        <div class="row">
+       {{--  <div class="row">
         	@foreach($venues as $venue)
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="100">
             <div class="testimony text-center"> 
               <figure>
+
                 <img src="{{asset($venue->photo)}}" alt="Cinque Terre" class="rounded">
+
+                 <img src="{{asset($venue->photo)}}" class="rounded" alt="Cinque Terre" width="300px" height="200px"> 
+
               </figure>
               <blockquote>
                 <p class="author mb-0">{{$venue->name}}</p>
@@ -35,7 +39,32 @@
               </blockquote>
             </div>
           </div>
-          @endforeach
+          @endforeach --}}
+
+         <div class="container mt-5 px-5">
+		<!-- Category -->
+		<div class="row">
+        	@foreach($venues as $venue)
+			
+			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
+				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center" >
+					<a href="{{route('event',$venue->id)}}">
+				  	<img src="{{asset($venue->photo)}}" class="card-img-top" alt="...">
+				  	<div class="card-body">
+				    <blockquote>
+                <p class="author mb-0">{{$venue->name}}</p>
+                
+                <p>{{$venue->address}}</p>
+                
+              </blockquote></div>
+				
+				  </a>	
+				</div>
+			</div>
+			@endforeach
+  
+  
+
           
         
 

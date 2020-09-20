@@ -73,13 +73,7 @@
 				<div class="col-md-6">
 					<input type="file" name="photo"  class="form-control" value="{{$event->photo}}">
 
-					<select name="event" id="category" class="form-control">
-			          	<optgroup label="Choose Class">
-					      {{-- @foreach($venues as $venue) --}}
-					        <option value="{{-- {{$venue->id}} --}}">{{-- {{$venue->name}} --}}</option>
-					      {{-- @endforeach  --}}
-					    </optgroup>
-			          </select>
+					
 			          
 					<img src="{{asset($event->photo)}}" class="img-fluid">
 					

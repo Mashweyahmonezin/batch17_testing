@@ -38,7 +38,7 @@ class VenueController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required',
+            'name'=>'required|min:4',
             'address'=>'required',
             'photo'=>'required',
         ]);
@@ -57,7 +57,7 @@ class VenueController extends Controller
             $venue->photo = $path;
             $venue->save();
 
-        $venue->save();
+        
         return redirect()->route('venues.index');
     }
 

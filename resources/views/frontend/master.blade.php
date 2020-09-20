@@ -35,17 +35,17 @@
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-11 col-xl-2">
-            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">Work<span class="text-primary">shop</span> </a></h1>
+            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">Join<span class="text-primary">With Us</span> </a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="{{route('eventpage')}}">Event</a></li>
+                {{-- <li><a href="{{route('eventpage')}}">Event</a></li> --}}
                 {{-- <li><a href="{{route('singerpage')}}">Singer</a></li>
                 <li><a href="{{route('schedulepage')}}">Schedule</a></li> --}}
                 <li><a href="{{route('venuepage')}}">Venue</a></li>
-                <li class="cta"><a href="{{route('buyticketpage')}}">Buy Tickets</a></li>
+               {{--  <li class="cta"><a href="{{route('buyticketpage')}}">Buy Tickets</a></li> --}}
               </ul>
             </nav>
           </div>
@@ -62,7 +62,7 @@
 
     @yield('content')
       
-    <footer class="site-footer">
+    {{-- <footer class="site-footer">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4">
@@ -87,7 +87,29 @@
               <a href="#" class="p-2"><span class="icon-instagram"></span></a>
             </p>
           </div>
+        </div> --}}
+
+        <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4 ">
+            <div class="site-section-heading" data-aos="fade-up">
+              <h2>Sponsors</h2>
+            </div>
+          </div>
+          {{-- <div class="col-lg-6 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error deleniti dolores necessitatibus eligendi. Nesciunt repellendus ab voluptatibus.</p>
+          </div> --}}
         </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+            <img src="images/logo_1.png" alt="Image" class="img-fluid">
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
         <div class="row">
           
             <div class="col-md-12 text-center">

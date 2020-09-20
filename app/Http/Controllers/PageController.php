@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Venue;
+use App\Event;
+use App\Ticket;
 
 class PageController extends Controller
 {
@@ -26,17 +28,20 @@ class PageController extends Controller
     // {
     // 	return view('frontend.schedule');
     // }
-    public function eventfun($value='')
+    public function eventfun($id)
+
     {
-    	return view('frontend.event');
+        $events=Event::where('venues_id',$id)->get();
+    	return view('frontend.event',compact('events'));
     }
     public function venuefun($value='')
     {
         $venues=Venue::all();
     	return view('frontend.venue',compact('venues'));
     }
-    public function buyticket($value='')
+    public function buyticket($id)
     {
-    	return view('frontend.buyticket');
+        $tickets=Ticket::where('event_id',$id)->get();
+    	return view('frontend.buyticket',compact('tickets'));
     }
 }
