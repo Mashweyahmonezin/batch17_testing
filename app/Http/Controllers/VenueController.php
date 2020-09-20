@@ -95,16 +95,14 @@ class VenueController extends Controller
         $request->validate([
             'name'=>'required',
             'address'=>'required',
-            'photo'=>'required',
+           // 'photo'=>'required',
         ]);
+        //dd($request->oldphoto);
         
-        $venue->name=$request->name;
-        $venue->address=$request->address;
-       
         if ($request->hasFile('photo')) {
 
              $imageName = time().'.'.$request->photo->extension();
-            $request->photo->move(public_path('backend/venue'),$imageName);
+            $request->photo->move(public_path('backend/venue/'),$imageName);
             $path = 'backend/venue/'.$imageName;
 
 
@@ -115,6 +113,9 @@ class VenueController extends Controller
          }
 
         //data update
+         $venue->name=$request->name;
+        $venue->address=$request->address;
+       
      
             $venue->photo = $path;
           

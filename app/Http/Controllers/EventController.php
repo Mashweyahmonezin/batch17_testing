@@ -43,6 +43,7 @@ class EventController extends Controller
     {
          $request->validate([
             'name'=>'required',
+            'address'=>'required',
             'date'=>'required',
             'start_time'=>'required',
             'end_time'=>'required',
@@ -52,6 +53,7 @@ class EventController extends Controller
         ]);
         $event=new Event();
         $event->name=$request->name;
+        $event->address=$request->address;
         $event->date=$request->date;
         $event->start_time=$request->start_time;
         $event->end_time=$request->end_time;
@@ -119,19 +121,13 @@ class EventController extends Controller
             'date'=>'required',
             'start_time'=>'required',
             'end_time'=>'required',
-            'photo'=>'sometimes',
+            
             
             'venue'=>'required'
             
         ]);
         //$event=new Event();
-        $event->name=$request->name;
-        $event->date=$request->date;
-        $event->start_time=$request->start_time;
-        $event->end_time=$request->end_time;
         
-        $event->venues_id=$request->venue;
-
          if ($request->hasFile('photo')) {
 
              $imageName = time().'.'.$request->photo->extension();
@@ -147,6 +143,13 @@ class EventController extends Controller
 
         //data update
      
+     $event->name=$request->name;
+        $event->date=$request->date;
+        $event->start_time=$request->start_time;
+        $event->end_time=$request->end_time;
+        
+        $event->venues_id=$request->venue;
+
             
             $event->photo = $path;
           

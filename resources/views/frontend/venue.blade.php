@@ -43,7 +43,7 @@
         	@foreach($venues as $venue)
 			
 			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center" >
+				<div class="{{-- card --}} categoryCard {{-- border-0 shadow-sm p-3 mb-5 rounded text-center --}}" >
 					<a href="{{route('event',$venue->id)}}">
 				  	<img src="{{asset($venue->photo)}}" class="card-img-top" alt="...">
 				  	<div class="card-body">
@@ -52,7 +52,8 @@
                 
                 <p>{{$venue->address}}</p>
                 
-              </blockquote></div>
+              </blockquote>
+            </div>
 				
 				  </a>	
 				</div>

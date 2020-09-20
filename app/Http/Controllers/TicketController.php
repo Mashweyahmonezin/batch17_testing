@@ -74,7 +74,8 @@ class TicketController extends Controller
      */
     public function edit(Ticket $ticket)
     {
-        return view('backend.ticket.edit',compact('ticket'));
+        $events=Event::all();
+        return view('backend.ticket.edit',compact('ticket','events'));
     }
 
     /**
@@ -93,7 +94,8 @@ class TicketController extends Controller
         ]);
         
         $ticket->name=$request->name;
-        
+        $ticket->price=$request->price;
+        $ticket->event_id=$request->event;
         
         $ticket->save();
         return redirect()->route('tickets.index');
