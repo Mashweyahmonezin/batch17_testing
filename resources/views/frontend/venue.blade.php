@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-    <div class="site-section">
+   {{--  <div class="site-section">
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-lg-4 mb-5">
@@ -19,7 +19,7 @@
             </div>
           </div>
         </div>
-
+ --}}
        {{--  <div class="row">
         	@foreach($venues as $venue)
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5" data-aos="fade-up" data-aos-delay="100">

@@ -40,6 +40,8 @@ Route::get('buyticket/{id}','PageController@buyticket')->name('buyticket');
 
 
 
+Route::get('loginform','PageController@loginfun')->name('loginform');
+Route::get('registerform','PageController@registerfun')->name('registerform');
 
 
 
@@ -47,3 +49,4 @@ Route::get('buyticket/{id}','PageController@buyticket')->name('buyticket');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('ticketlist','PageController@ticketfun');

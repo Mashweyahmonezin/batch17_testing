@@ -18,20 +18,27 @@
         <div class="row">
           
           @foreach($tickets as $ticket)
+
+
+
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0"  data-aos="fade-up" data-aos-delay="200">
             <div class="pricing border-secondary text-center">
               <h2>{{$ticket->name}}</h2>
+              <h2>{{$ticket->event->name}}</h2>
               <div class="amount"><span class="number">{{$ticket->price}}</span><sup>Ks</sup> </div>
-              {{-- <ul class="list-unstyled mb-5">
-                <li>1-Day Entrance</li>
-                <li>Essential Access</li>
-                <li>1 Guest Ticket</li>
-                <li>1 Workshop</li>
-                <li>Free Snacks</li>
-              </ul> --}}
-              <div><a href="#" class="btn btn-secondary px-4 py-2">Buy Ticket</a></div>
+             
+              <div>
+              @role('User')
+
+                <a href="#" class="btn btn-secondary px-4 py-2"  data-id="{{$ticket->id}}" data-name="{{$ticket->name}}" data-price="{{$ticket->price}}" data-event="{{$ticket->event}}">Buy Ticket</a>
+              @else
+                <a href="{{route('loginform')}}" class="btn btn-secondary btn-block mainfullbtncolor">Please login </a>
+              @endrole
+
+              </div>
             </div>
           </div>
+
           @endforeach
           
 
@@ -41,3 +48,15 @@
       </div>
     </div>
     @endsection
+    {{-- @section('script')
+    <script type="text/javascript">
+  $(document).ready(function(){
+  //update_cart_count();
+  
+  $('.btn').click(function(){
+    alert("hello");
+
+  })
+})
+</script>
+@endsection --}}

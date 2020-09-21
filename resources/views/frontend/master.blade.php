@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/aos.css')}}">
 
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('icofont/icofont.min.css')}}">
   </head>
   <body>
   
@@ -40,12 +41,51 @@
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="nav-item @if(\Route::current()->uri=='front'){{'active'}}@endif"><a href="{{route('frontpage')}}">Home</a></li>
                 {{-- <li><a href="{{route('eventpage')}}">Event</a></li> --}}
                 {{-- <li><a href="{{route('singerpage')}}">Singer</a></li>
                 <li><a href="{{route('schedulepage')}}">Schedule</a></li> --}}
                 <li><a href="{{route('venuepage')}}">Venue</a></li>
-               {{--  <li class="cta"><a href="{{route('buyticketpage')}}">Buy Tickets</a></li> --}}
+                {{-- <li><a href="{{route('loginform')}}">Login</a></li>  --}}
+                {{-- <li><a href="{{route('registerform')}}">Sing up</a></li>  --}}
+                <li>
+                  @guest
+                            <li class="nav-item @if(\Route::current()->uri == 'loginpage'){{'active'}}@endif">
+                                <a class="nav-link" href="{{ route('loginform') }}">{{ __('LOGIN') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item @if(\Route::current()->uri == 'registerpage'){{'active'}}@endif">
+                                    <a class="nav-link" href="{{ route('registerform') }}">{{ __('REGISTER') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+                                
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                </li>
+                
+                <li>
+                  <a href="{{url('ticketlist')}}" class="text-decoration-none d-xl-inline d-lg-inline d-md-inline d-sm-inline d-none buyticket">
+                  <i class="icofont-shopping-cart"></i>
+                  <span class="badge badge-pill badge-light badge-notify cartNotistyle noti">0</span>
+                  <span id="alltotal"></span>
+                </a></li>
+                
+               
               </ul>
             </nav>
           </div>
@@ -62,54 +102,10 @@
 
     @yield('content')
       
-    {{-- <footer class="site-footer">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4">
-            <h2 class="footer-heading text-uppercase mb-4">About Event</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit aliquid quibusdam fugit architecto.</p>
-          </div>
-          <div class="col-md-3 ml-auto">
-            <h2 class="footer-heading text-uppercase mb-4">Quick Links</h2>
-            <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Speakers</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h2 class="footer-heading text-uppercase mb-4">Connect with Us</h2>
-            <p>
-              <a href="#" class="p-2 pl-0"><span class="icon-facebook"></span></a>
-              <a href="#" class="p-2"><span class="icon-twitter"></span></a>
-              <a href="#" class="p-2"><span class="icon-youtube"></span></a>
-              <a href="#" class="p-2"><span class="icon-instagram"></span></a>
-            </p>
-          </div>
-        </div> --}}
+   
 
-        <div class="site-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-lg-4 ">
-            <div class="site-section-heading" data-aos="fade-up">
-              <h2>Sponsors</h2>
-            </div>
-          </div>
-          {{-- <div class="col-lg-6 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="100">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error deleniti dolores necessitatibus eligendi. Nesciunt repellendus ab voluptatibus.</p>
-          </div> --}}
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-            <img src="images/logo_1.png" alt="Image" class="img-fluid">
-          </div>
-          
+        
 
-        </div>
-      </div>
-    </div>
         <div class="row">
           
             <div class="col-md-12 text-center">
@@ -126,7 +122,7 @@
     </footer>
     
   </div>
-
+  {{-- <script type="text/javascript" src="{{asset('frontend/js/jquery.min.js')}}"></script> --}}
   <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
   <script src="{{asset('frontend/js/jquery-migrate-3.0.1.min.js')}}"></script>
   <script src="{{asset('frontend/js/jquery-ui.js')}}"></script>
@@ -140,6 +136,7 @@
   <script src="{{asset('frontend/js/aos.js')}}"></script>
 
   <script src="{{asset('frontend/js/main.js')}}"></script>
-    
+  <script type="text/javascript" src="{{asset('frontend/js/addtocart.js')}}"></script>
+ {{-- @yield('script') --}}
   </body>
 </html>
