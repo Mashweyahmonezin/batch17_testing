@@ -43,7 +43,7 @@ class EventController extends Controller
     {
          $request->validate([
             'name'=>'required',
-            'address'=>'required',
+            
             'date'=>'required',
             'start_time'=>'required',
             'end_time'=>'required',
@@ -53,7 +53,7 @@ class EventController extends Controller
         ]);
         $event=new Event();
         $event->name=$request->name;
-        $event->address=$request->address;
+        
         $event->date=$request->date;
         $event->start_time=$request->start_time;
         $event->end_time=$request->end_time;
