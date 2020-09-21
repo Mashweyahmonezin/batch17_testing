@@ -26,14 +26,31 @@
 			        </div>
 			      </div>
 
-			     {{--  <div class="form-group row {{ $errors->has('price') ? 'has-error' : '' }}">
-			        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+			       <div class="form-group row {{ $errors->has('price') ? 'has-error' : '' }}">
+			        <label for="inputName" class="col-sm-2 col-form-label">Price</label>
 			        <div class="col-sm-5">
 			          <input type="integer" class="form-control" id="inputName" name="price" value="{{$ticket->price}}">
 			          <span class="text-danger">{{ $errors->first('price') }}</span>
 			        </div>
 			      </div>
- --}}
+
+			      <div class="form-group row {{ $errors->has('venue_id') ? 'has-error' : '' }}">
+			        <label for="inputName" class="col-sm-2 col-form-label">Event Name</label>
+			        <div class="col-sm-5">
+
+			          <select name="event" id="category" class="form-control">
+			          	<optgroup label="Choose Category">
+					      @foreach($events as $event)
+					        <option value="{{$event->id}}" @if($event->id == $ticket->event_id) {{'selected'}} @endif >{{$event->name}}</option>
+					      @endforeach 
+					    </optgroup>
+			          </select>
+
+			          <span class="text-danger">{{ $errors->first('category') }}</span>
+			        </div>
+			      </div>
+
+
 			     
 
 			     

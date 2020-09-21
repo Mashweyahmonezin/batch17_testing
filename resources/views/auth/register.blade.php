@@ -38,7 +38,7 @@
                                 @enderror
                             </div>
                         </div>
-                        {{-- <div class="form-group row">
+                         <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
 
-                         --}}<div class="form-group row">
+                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

@@ -39,7 +39,7 @@
 				<div class="col-md-6">
 					<input type="file" name="photo"  class="form-control" value="">
 					<img src="{{asset($venue->photo)}}" class="img-fluid">
-					<input type="hidden" name="oldphoto" value="{{-- {{asset($vanue->photo)}} --}}">
+					<input type="hidden" name="oldphoto" value="{{asset($venue->photo)}}">
 				</div>
 				</div>
 

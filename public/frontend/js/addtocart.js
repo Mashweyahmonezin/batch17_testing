@@ -1,19 +1,28 @@
 $(document).ready(function(){
 
+
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+  });
+
+
   update_cart_count();
   show_cart();
-  $('.btn').click(function(){
+  $('.buy').click(function(){
    // alert("hello");
     var id=$(this).data('id');
    var name=$(this).data('name');
    var price=$(this).data('price');
    var event=$(this).data('event');
-
+   //alert(event);
     
    var product={
      id:id,
      name:name,
      price:price,
+     event:event,
      quantity:1
    };
    add_to_cart(product);
@@ -21,7 +30,7 @@ $(document).ready(function(){
   })
   function add_to_cart(product){
    var mycart=localStorage.getItem('mycart');
-   console.log(mycart);
+   //console.log(mycart);
    if(!mycart){
      mycart='{"item_list":[]}';
 
@@ -184,23 +193,40 @@ $(document).ready(function(){
     show_cart();
     update_cart_count();
   })
-  $('.buy_now').on('click',function () {
-      var shopstring=localStorage.getItem("mycart");
-      var shopArr=JSON.parse(shopstring);
-      var shop_data=shopArr.item_list;
+  // $('.buy_now').on('click',function () {
+  //     var shopstring=localStorage.getItem("mycart");
+  //     var shopArr=JSON.parse(shopstring);
+  //     var shop_data=shopArr.item_list;
 
-      if(shopstring){
-        $.post('/orders',{shop_data:shop_data},function (response) {
-          if(response){
-            alert(response);
-            localStorage.clear();
-            show_cart();
-            update_cart_count();
-            location.href="/";
-          }
-        })
-      }
+  //     if(shopstring){
+  //       $.post('/orders',{shop_data:shop_data},function (response) {
+  //         if(response){
+  //           alert(response);
+  //           localStorage.clear();
+  //           show_cart();
+  //           update_cart_count();
+  //           location.href="/";
+  //         }
+  //       })
+  //     }
+  // })
+  $('.buy_now').click(function(){
+    //var note = $('.note').val();
+    var shopString= localStorage.getItem("mycart");
+    if(shopString){
+
+      $.post('/orders',{shop_data:shopString},function(response){
+        if(response){
+          alert(response);
+          localStorage.clear();
+          //gatData();
+          show_cart();
+          location.href="/";
+        }
+      })
+    }
   })
+
 })
 
 

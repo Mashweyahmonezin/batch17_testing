@@ -55,7 +55,7 @@ class LoginController extends Controller
 
             case 'User':
 
-                return redirect('front');
+                return redirect('/');
 
                 break;
 

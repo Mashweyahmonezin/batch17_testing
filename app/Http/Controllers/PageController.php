@@ -28,6 +28,10 @@ class PageController extends Controller
     // {
     // 	return view('frontend.schedule');
     // }
+    public function contactfun($value='')
+    {
+     return view('frontend.contact');
+    }
     public function eventfun($id)
 
     {

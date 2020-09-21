@@ -4,6 +4,8 @@
     <title>Workshop &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('frontend/fonts/icomoon/style.css')}}">
@@ -41,11 +43,14 @@
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="nav-item @if(\Route::current()->uri=='front'){{'active'}}@endif"><a href="{{route('frontpage')}}">Home</a></li>
+
+                <li class="nav-item @if(\Route::current()->uri=='contact'){{'active'}}@endif"><a href="{{route('contactpage')}}">Contact Us</a></li>
+
+
                 {{-- <li><a href="{{route('eventpage')}}">Event</a></li> --}}
                 {{-- <li><a href="{{route('singerpage')}}">Singer</a></li>
                 <li><a href="{{route('schedulepage')}}">Schedule</a></li> --}}
-                <li><a href="{{route('venuepage')}}">Venue</a></li>
+                <li class="nav-item @if(\Route::current()->uri=='venuepage'){{'active'}}@endif"><a href="{{route('venuepage')}}">Venue</a></li>
                 {{-- <li><a href="{{route('loginform')}}">Login</a></li>  --}}
                 {{-- <li><a href="{{route('registerform')}}">Sing up</a></li>  --}}
                 <li>

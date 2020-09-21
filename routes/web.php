@@ -27,11 +27,15 @@ Route::middleware('auth')->group(function(){
 	Route::resource('tickets','TicketController');
 	Route::resource('events','EventController');
 	Route::resource('sponsors','SponsorController');
+	Route::resource('orders','OrderController');
+
 
 });
 
 
 Route::get('front','PageController@frontfun')->name('frontpage');
+ Route::get('contact','PageController@contactfun')->name('contactpage');
+
 // Route::get('singer','PageController@singerfun')->name('singerpage');
 // Route::get('schedule','PageController@schedulefun')->name('schedulepage');
 Route::get('event/{id}','PageController@eventfun')->name('event');

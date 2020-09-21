@@ -1,5 +1,6 @@
 @extends('frontend.master')
 @section('content')
+
 <div class="site-section site-hero inner">
       <div class="container">
         <div class="row align-items-center">
@@ -11,7 +12,7 @@
       </div>
     </div>
 
-    <div class="site-section">
+   {{--  <div class="site-section"> --}}
       <div class="container">
         
 
@@ -30,7 +31,7 @@
               <div>
               @role('User')
 
-                <a href="#" class="btn btn-secondary px-4 py-2"  data-id="{{$ticket->id}}" data-name="{{$ticket->name}}" data-price="{{$ticket->price}}" data-event="{{$ticket->event}}">Buy Ticket</a>
+                <a href="#" class="btn btn-secondary px-4 py-2 buy"  data-id="{{$ticket->id}}" data-name="{{$ticket->name}}" data-price="{{$ticket->price}}" data-event="{{$ticket->event->name}}">Buy Ticket</a>
               @else
                 <a href="{{route('loginform')}}" class="btn btn-secondary btn-block mainfullbtncolor">Please login </a>
               @endrole
@@ -46,7 +47,7 @@
 
         </div>
       </div>
-    </div>
+    {{-- </div> --}}
     @endsection
     {{-- @section('script')
     <script type="text/javascript">
